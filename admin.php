@@ -21,5 +21,5 @@ echo "Admin username: " . $_SESSION['username'];
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <p>Add Admin Interface</p>
+        <p><br>Add Admin Interface</p>
     </body>

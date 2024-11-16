@@ -21,5 +21,5 @@ echo "Staff username: " . $_SESSION['username'];
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <p>Add Staff Interface</p>
+        <p><br>Add Staff Interface</p>
     </body>
