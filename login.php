@@ -19,12 +19,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->execute();
     $stmt->store_result();
     $stmt->bind_result($id, $db_username, $db_password, $role);
-    
+
     if ($stmt->num_rows > 0) {
         $stmt->fetch();
 
-        // Verify password
-        if (password_verify($password, $db_password)) {
+        // Compare the plain-text password
+        if ($password === $db_password) {
             // Password is correct, start session
             $_SESSION['user_id'] = $id;
             $_SESSION['username'] = $db_username;
