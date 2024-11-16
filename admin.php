@@ -9,7 +9,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'admin') {
 }
 
 // Identify login username credentials
-echo "Admin username: " . $_SESSION['username'];
+echo "Admin username: " . $_SESSION['username'] . " Add Admin Interface";
 ?>
 
 <!DOCTYPE html>
@@ -21,5 +21,4 @@ echo "Admin username: " . $_SESSION['username'];
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <p><br>Add Admin Interface</p>
     </body>

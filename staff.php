@@ -9,7 +9,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'staff') {
 }
 
 // Staff-specific content here
-echo "Staff username: " . $_SESSION['username'];
+echo "Staff username: " . $_SESSION['username'] . " Add Staff Interface";
 ?>
 
 <!DOCTYPE html>
@@ -21,5 +21,4 @@ echo "Staff username: " . $_SESSION['username'];
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <p><br>Add Staff Interface</p>
     </body>
