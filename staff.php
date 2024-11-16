@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 // Ensure the user is logged in and is a staff member
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'staff') {
