@@ -1,3 +1,4 @@
+-- Table creation and values
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50) NOT NULL,
@@ -5,7 +6,13 @@ CREATE TABLE users (
     role ENUM('admin', 'staff') NOT NULL,
 );
 
--- Insert sample admin and staff users
 INSERT INTO users (username, password, role) VALUES
 ('admin', 'admin', 'admin'),
 ('staff', 'staff', 'staff');
+
+-- User creation for DB connection (all privilege)
+CREATE USER 'test'@'%' IDENTIFIED BY 'test';
+
+GRANT ALL PRIVILEGES ON *.* TO 'test'@'%';
+
+FLUSH PRIVILEGES;
