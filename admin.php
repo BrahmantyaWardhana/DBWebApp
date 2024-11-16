@@ -18,12 +18,12 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'admin') {
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <?php
+        <p><?php
         
             // Admin-specific content here
             echo "Admin username: " . $_SESSION['username'] . " Add Admin Interface";   
 
-        ?>
+        ?></p>
         <!-- Logout Button -->
         <form action="logout.php" method="POST">
             <button type="submit">Logout</button>
