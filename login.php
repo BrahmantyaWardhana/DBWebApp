@@ -6,8 +6,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // Database connection
-    $mysqli = new mysqli('localhost', 'test', 'test', 'itmd422'); // Change these to your DB credentials
+    // Database connection 
+    ############ Change these to appropriate DB credentials ############
+    $mysqli = new mysqli('localhost', 'test', 'test', 'itmd422'); //('host', 'user', 'password', 'database name')
 
     if ($mysqli->connect_error) {
         die("Connection failed: " . $mysqli->connect_error);

@@ -8,8 +8,8 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'admin') {
     exit;
 }
 
-// Admin-specific content here
-echo "Welcome Admin, " . $_SESSION['username'] . "!";
+// Identify login username credentials
+echo "Admin username: " . $_SESSION['username'];
 ?>
 
 <!DOCTYPE html>
@@ -21,5 +21,5 @@ echo "Welcome Admin, " . $_SESSION['username'] . "!";
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <p>Admin interface</p>
+        <p>Add Admin Interface</p>
     </body>
