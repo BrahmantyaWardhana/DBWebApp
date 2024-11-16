@@ -2,5 +2,5 @@
 web apllication for itmd-422
 
 Notes:
-
-- Missing logout functionality to securely destroy session
+- php code for Local DB connection only
+- Session still not properly managed

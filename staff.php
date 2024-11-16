@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 // Ensure the user is logged in and is a staff member
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'staff') {
@@ -8,8 +7,6 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'staff') {
     exit;
 }
 
-// Staff-specific content here
-echo "Staff username: " . $_SESSION['username'] . " Add Staff Interface";
 ?>
 
 <!DOCTYPE html>
@@ -21,16 +18,14 @@ echo "Staff username: " . $_SESSION['username'] . " Add Staff Interface";
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
+        <p><?php
+        
+            // Staff-specific content here
+            echo "Staff username: " . $_SESSION['username'] . " Add Staff Interface";   
+
+        ?></p>
+        <!-- Logout Button -->
+        <form action="logout.php" method="POST">
+            <button type="submit">Logout</button>
+        </form>
     </body>
-    <script>
-        window.addEventListener('beforeunload', function (e) {
-            // Send an AJAX request to destroy the session when the tab is closed
-            fetch('logout.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                },
-                body: 'destroy=true'
-            });
-        });
-    </script>

@@ -1,3 +1,14 @@
+<?php
+
+session_start()
+
+include "login.php"
+include "logout.php"
+include "staff.php"
+include "admin.php"
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
