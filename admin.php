@@ -22,3 +22,15 @@ echo "Admin username: " . $_SESSION['username'] . " Add Admin Interface";
     </head>
     <body>
     </body>
+    <script>
+        window.addEventListener('beforeunload', function (e) {
+            // Send an AJAX request to destroy the session when the tab is closed
+            fetch('logout.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: 'destroy=true'
+            });
+        });
+    </script>
