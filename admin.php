@@ -3,7 +3,7 @@
 // Ensure the user is logged in and is an admin
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'admin') {
     // Redirect to login if not logged in or not an admin
-    header("Location: login.php");
+    header("Location: index.php");
     exit;
 }
 
