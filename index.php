@@ -1,11 +1,11 @@
 <?php
 
-session_start()
+session_start();
 
-include "login.php"
-include "logout.php"
-include "staff.php"
-include "admin.php"
+include "login.php";
+include "logout.php";
+include "staff.php";
+include "admin.php";
 
 ?>
 
