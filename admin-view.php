@@ -8,7 +8,9 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'admin') {
     exit;
 }
 
-require_once('config/db.php')
+require_once('config/db.php');
+$query = "SELECT * FROM Doctor";
+$doctor = mysqli_query($con,$query);
 
 ?>
 
@@ -42,13 +44,26 @@ require_once('config/db.php')
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td> Doctor ID </td>
-                                        <td> First Name </td>
-                                        <td> Last Name </td>
-                                        <td> Specialization </td>
-                                        <td> Status </td>
-                                        <td> Email </td>
+                                    <?php
+
+                                        while ($row = mysqli_fetch_assoc($doctor)) {    
+
+                                    ?>
+                                    
+                                        <td><?php echo $row['doctorID']; ?></td>
+                                        <td><?php echo $row['firstName']; ?></td>
+                                        <td><?php echo $row['lastName']; ?></td>
+                                        <td><?php echo $row['specialization']; ?></td>
+                                        <td><?php echo $row['status']; ?></td>
+                                        <td><?php echo $row['email']; ?></td>
+
                                     </tr>
+
+                                    <?php
+                                    
+                                        }
+                                    
+                                    ?>
                                 </tbody>
                             </table>
                         </div>
