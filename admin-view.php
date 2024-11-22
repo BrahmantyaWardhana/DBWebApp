@@ -11,14 +11,14 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'admin') {
 require_once('config/db.php');
 
 // debugging check db connection
-echo "Connected successfully";
+//echo "Connected successfully";
 $query = "SELECT * FROM Doctor";
 $doctor = mysqli_query($con,$query);
 
 // debugging check query
-if (!$doctor) {
-    die("Query failed: " . mysqli_error($con));
-}
+#if (!$doctor) {
+#    die("Query failed: " . mysqli_error($con));
+#}
 
 ?>
 
