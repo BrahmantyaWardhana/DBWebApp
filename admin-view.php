@@ -42,12 +42,13 @@ $doctor = mysqli_query($con,$query);
                             <table class="table table-bordered">
                                 <thead>
                                     <tr>
-                                        <td> Doctor ID </td>
-                                        <td> First Name </td>
-                                        <td> Last Name </td>
-                                        <td> Specialization </td>
-                                        <td> Status </td>
-                                        <td> Email </td>
+                                        <th> Doctor ID </th>
+                                        <th> First Name </th>
+                                        <th> Last Name </th>
+                                        <th> Specialization </th>
+                                        <th> Status </th>
+                                        <th> Email </th>
+                                        <th> Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -59,6 +60,10 @@ $doctor = mysqli_query($con,$query);
                                         <td><?php echo $row['specialization']; ?></td>
                                         <td><?php echo $row['status']; ?></td>
                                         <td><?php echo $row['email']; ?></td>
+                                        <td> 
+                                            <a class="btn btn-primary btn-sm" href="">Edit</a>
+                                            <a class="btn btn-danger btn-sm" href="">Delete</a>
+                                        </td>
                                     </tr>
                                     <?php } ?>
                                 </tbody>
