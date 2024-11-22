@@ -16,3 +16,71 @@ CREATE USER 'test'@'%' IDENTIFIED BY 'test';
 GRANT ALL PRIVILEGES ON *.* TO 'test'@'%';
 
 FLUSH PRIVILEGES;
+
+-- Create Tables
+
+-- Doctors
+CREATE TABLE Doctor (
+    doctorID INT AUTO_INCREMENT PRIMARY KEY,
+    firstName VARCHAR(25),
+    lastName VARCHAR(25),
+    specialization VARCHAR(40),
+    status ENUM('active', 'inactive') NOT NULL,
+    email VARCHAR(40)
+)
+
+-- Patients
+CREATE TABLE Patients (
+    doctorID INT AUTO_INCREMENT PRIMARY KEY,
+    firstName VARCHAR(25),
+    lastName VARCHAR(25),
+    phone VARCHAR(25),
+    email VARCHAR(40),
+    address VARCHAR(70),
+    gender VARCHAR(30),
+    birthdate DATE
+)
+
+-- Appointment
+CREATE TABLE Appointment (
+    apptID INT AUTO_INCREMENT PRIMARY KEY,
+    patientID INT,
+    doctorID INT,
+    apptDate DATE,
+    apptTime TIME,
+    status ENUM('scheduled', 'completed', 'canceled') NOT NULL,
+    reasonForVisit VARCHAR(255),
+    FOREIGN KEY (patientID) REFERENCES Patient(patientID),
+    FOREIGN KEY (doctorID) REFERENCES Doctor(doctorID)
+);
+
+-- Payment
+CREATE TABLE Payments (
+    paymentID INT AUTO_INCREMENT PRIMARY KEY,
+    apptID INT,
+    amount DECIMAL(10, 2) NOT NULL,
+    paymentDate DATE,
+    paymentMethod ENUM('credit_card', 'cash', 'insurance', 'other') NOT NULL,
+    status ENUM('paid', 'pending') NOT NULL,
+    FOREIGN KEY (apptID) REFERENCES Appointment(apptID)
+);
+
+-- Schedule
+CREATE TABLE Schedule (
+    scheduleID INT AUTO_INCREMENT PRIMARY KEY,
+    doctorID INT,
+    dayOfWeek ENUM('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday') NOT NULL,
+    startTime TIME NOT NULL,
+    endTime TIME NOT NULL,
+    clinicName VARCHAR(100) NOT NULL,
+    FOREIGN KEY (doctorID) REFERENCES Doctor(doctorID)
+);
+
+-- Clinic
+CREATE TABLE Clinic (
+    clinicID INT AUTO_INCREMENT PRIMARY KEY,
+    clinicName VARCHAR(100) NOT NULL,
+    address VARCHAR(255) NOT NULL,
+    doctorID INT,
+    FOREIGN KEY (doctorID) REFERENCES Doctor(doctorID)
+);
