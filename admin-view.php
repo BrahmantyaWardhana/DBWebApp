@@ -8,6 +8,8 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'admin') {
     exit;
 }
 
+require_once('config/db.php')
+
 ?>
 
 <!DOCTYPE html>
@@ -28,14 +30,26 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'admin') {
                         </div>
                         <div class="card-body">
                             <table class="table table-bordered">
-                                <tr>
-                                    <td> Doctor ID </td>
-                                    <td> First Name </td>
-                                    <td> Last Name </td>
-                                    <td> Specialization </td>
-                                    <td> Status </td>
-                                    <td> Email </td>
-                                <tr>
+                                <thead>
+                                    <tr>
+                                        <td> Doctor ID </td>
+                                        <td> First Name </td>
+                                        <td> Last Name </td>
+                                        <td> Specialization </td>
+                                        <td> Status </td>
+                                        <td> Email </td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td> Doctor ID </td>
+                                        <td> First Name </td>
+                                        <td> Last Name </td>
+                                        <td> Specialization </td>
+                                        <td> Status </td>
+                                        <td> Email </td>
+                                    </tr>
+                                </tbody>
                             </table>
                         </div>
                     </div>
