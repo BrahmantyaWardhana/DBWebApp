@@ -27,7 +27,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'admin') {
                             <h2 class="display-6 text-center">Display Doctors Table Test</h2>
                         </div>
                         <div class="card-body">
-                            <table>
+                            <table class="table table-bordered">
                                 <tr>
                                     <td> Doctor ID </td>
                                     <td> First Name </td>
