@@ -27,11 +27,11 @@ CREATE TABLE Doctor (
     specialization VARCHAR(40),
     status ENUM('active', 'inactive') NOT NULL,
     email VARCHAR(40)
-)
+);
 
 -- Patients
 CREATE TABLE Patients (
-    doctorID INT AUTO_INCREMENT PRIMARY KEY,
+    patientID INT AUTO_INCREMENT PRIMARY KEY,
     firstName VARCHAR(25),
     lastName VARCHAR(25),
     phone VARCHAR(25),
@@ -39,7 +39,7 @@ CREATE TABLE Patients (
     address VARCHAR(70),
     gender VARCHAR(30),
     birthdate DATE
-)
+);
 
 -- Appointment
 CREATE TABLE Appointment (
@@ -50,7 +50,7 @@ CREATE TABLE Appointment (
     apptTime TIME,
     status ENUM('scheduled', 'completed', 'canceled') NOT NULL,
     reasonForVisit VARCHAR(255),
-    FOREIGN KEY (patientID) REFERENCES Patient(patientID),
+    FOREIGN KEY (patientID) REFERENCES Patients(patientID),
     FOREIGN KEY (doctorID) REFERENCES Doctor(doctorID)
 );
 
@@ -84,3 +84,9 @@ CREATE TABLE Clinic (
     doctorID INT,
     FOREIGN KEY (doctorID) REFERENCES Doctor(doctorID)
 );
+
+-- Insert values for testing
+INSERT INTO Doctor (firstName, lastName, specialization, status, email)
+VALUES
+    ('John', 'Doe', 'Cardiology', 'active', 'jdoe@hospital.com'),
+    ('Jane', 'Smith', 'Pediatrics', 'inactive', 'jsmith@hospital.com');
