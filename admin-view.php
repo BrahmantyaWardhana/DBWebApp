@@ -9,8 +9,16 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'admin') {
 }
 
 require_once('config/db.php');
+
+// debugging check db connection
+echo "Connected successfully";
 $query = "SELECT * FROM Doctor";
 $doctor = mysqli_query($con,$query);
+
+// debugging check query
+if (!$doctor) {
+    die("Query failed: " . mysqli_error($con));
+}
 
 ?>
 
@@ -43,27 +51,16 @@ $doctor = mysqli_query($con,$query);
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <?php while ($row = mysqli_fetch_assoc($doctor)) { ?>
                                     <tr>
-                                    <?php
-
-                                        while ($row = mysqli_fetch_assoc($doctor)) {    
-
-                                    ?>
-                                    
                                         <td><?php echo $row['doctorID']; ?></td>
                                         <td><?php echo $row['firstName']; ?></td>
                                         <td><?php echo $row['lastName']; ?></td>
                                         <td><?php echo $row['specialization']; ?></td>
                                         <td><?php echo $row['status']; ?></td>
                                         <td><?php echo $row['doctorID']; ?></td>
-
                                     </tr>
-
-                                    <?php
-                                    
-                                        }
-                                    
-                                    ?>
+                                    <?php } ?>
                                 </tbody>
                             </table>
                         </div>
