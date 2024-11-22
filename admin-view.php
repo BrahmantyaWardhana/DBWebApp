@@ -22,9 +22,26 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'admin') {
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <div class="card">
+                    <div class="card mt-5">
                         <div class="card-reader">
-                            <h2 class="display-6 text-center">Display Tables Test</h2>
+                            <h2 class="display-6 text-center">Display Doctors Table Test</h2>
+                        </div>
+                        <div class="card-body">
+                            <table>
+                                <tr>
+                                    <td> Doctor ID </td>
+                                    <td> First Name </td>
+                                    <td> Last Name </td>
+                                    <td> Specialization </td>
+                                    <td> Status </td>
+                                    <td> Email </td>
+                                <tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <form action="logout.php" method="POST">
             <button type="submit">Logout</button>
         </form>
