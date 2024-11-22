@@ -58,7 +58,7 @@ $doctor = mysqli_query($con,$query);
                                         <td><?php echo $row['lastName']; ?></td>
                                         <td><?php echo $row['specialization']; ?></td>
                                         <td><?php echo $row['status']; ?></td>
-                                        <td><?php echo $row['doctorID']; ?></td>
+                                        <td><?php echo $row['email']; ?></td>
                                     </tr>
                                     <?php } ?>
                                 </tbody>
