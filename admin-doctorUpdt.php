@@ -1,4 +1,8 @@
 <?php
+// enable error message
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
 session_start();
 
 // Ensure the user is logged in and is an admin
