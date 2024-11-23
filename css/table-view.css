@@ -1,0 +1,11 @@
+.table-container {
+    max-height: 200px; /* Set the height to display 5 rows */
+    overflow-y: auto;
+  }
+
+  .table thead {
+    background-color: #f8f9fa; /* Optional: make the header visually distinct */
+    position: sticky;
+    top: 0;
+    z-index: 1; /* Ensure the header stays on top */
+  }
