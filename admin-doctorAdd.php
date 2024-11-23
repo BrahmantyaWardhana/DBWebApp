@@ -20,24 +20,22 @@ $email = "";
 $errorMessage="";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $fname = $_POST['firstName'] ?? '';
-    $lname = $_POST['lastName'] ?? '';
-    $specialization = $_POST['specialization'] ?? '';
-    $status = $_POST['status'] ?? '';
-    $email = $_POST['email'] ?? '';
+    $fname = $_POST['firstName'];
+    $lname = $_POST['lastName'];
+    $specialization = $_POST['specialization'];
+    $status = $_POST['status'];
+    $email = $_POST['email'];
 
     if (empty($fname) || empty($lname) || empty($specialization) || empty($status) || empty($email)) {
         $errorMessage = 'All fields are required.';
     } else {
         // Prepare and execute the SQL query to insert data into the database
-        $sql = "INSERT INTO Doctor (firstName, lastName, specialization, status, email) 
-                VALUES ('$fname', '$lname', '$specialization', '$status', '$email')";
+        $sql = "INSERT INTO Doctor (firstName, lastName, specialization, status, email) " .
+                "VALUES ('$fname', '$lname', '$specialization', '$status', '$email')";
 
-        if (mysqli_query($con, $sql)) {
-            $successMessage = 'New entries successfully added.';
-        } else {
-            $errorMessage = 'Failed to add new entry: ' . mysqli_error($con);
-        }
+        $result = $con->query($sql);
+
+        $successMessage = 'New entries successfully added.';
 
         // Reset the form variables
         $fname = $lname = $specialization = $status = $email = '';
