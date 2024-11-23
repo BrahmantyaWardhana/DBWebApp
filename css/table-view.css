@@ -1,5 +1,5 @@
 .table-container {
-    max-height: 200px; /* Set the height to display 5 rows */
+    max-height: 50px; /* Set the height to display 5 rows */
     overflow-y: auto;
   }
 
