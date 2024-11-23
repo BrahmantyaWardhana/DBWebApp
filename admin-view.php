@@ -66,8 +66,8 @@ $doctor = mysqli_query($con,$query);
                                         <td><?php echo $row['status']; ?></td>
                                         <td><?php echo $row['email']; ?></td>
                                         <td> 
-                                            <a class="btn btn-primary btn-sm" href="admin-doctorUpdt?id=<?php echo $row['doctorID']; ?>">Edit</a>
-                                            <a class="btn btn-danger btn-sm" href="admin-doctorDel?id=<?php echo $row['doctorID']; ?>">Delete</a>
+                                            <a class="btn btn-primary btn-sm" href="admin-doctorUpdt.php?id=<?php echo $row['doctorID']; ?>">Edit</a>
+                                            <a class="btn btn-danger btn-sm" href="admin-doctorDel.php?id=<?php echo $row['doctorID']; ?>">Delete</a>
                                         </td>
                                     </tr>
                                     <?php } ?>
