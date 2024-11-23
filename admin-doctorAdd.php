@@ -8,6 +8,8 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'admin') {
     exit;
 }
 
+include_once('db.php');
+
 // initializae variables to record input
 $fname = "";
 $lname = "";
@@ -27,7 +29,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($fname) || empty($lname) || empty($specialization) || empty($status) || empty($email)) {
         $errorMessage = 'All fields are required.';
     } else {
-        $successMessage = 'New entries successfully added.';
+        // Prepare and execute the SQL query to insert data into the database
+        $sql = "INSERT INTO doctors (first_name, last_name, specialization, status, email) 
+                VALUES ('$fname', '$lname', '$specialization', '$status', '$email')";
+
+        if (mysqli_query($con, $sql)) {
+            $successMessage = 'New entries successfully added.';
+        } else {
+            $errorMessage = 'Failed to add new entry: ' . mysqli_error($con);
+        }
+        
         // Reset the form variables
         $fname = $lname = $specialization = $status = $email = '';
     }
