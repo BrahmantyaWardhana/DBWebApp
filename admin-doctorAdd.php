@@ -59,16 +59,13 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
         <div class="container my-5">
             <h2 class="display-6 text-center">Update Doctors Table Test</h2>
 
-            <?php 
-            if (!empty($errorMessage)) {
-                echo "
-                <div class='alert alert-warning alert-dismissible fade show' role='alert'>
-                    <strong>$errorMessage</strong>
-                    <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-                </div>
-                ";
-            }
-            ?>
+            <!-- error message -->
+            <?php if (!empty($errorMessage)): ?>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Error:</strong> <?= htmlspecialchars($errorMessage) ?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <?php endif; ?>
 
             <form method="POST">
                 <div class="row mb-3">
@@ -108,20 +105,13 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
                     </div>
                 </div>
 
-                <?php 
-                if ( !empty($successMessage) ) {
-                    echo "
-                    <div class='row mb-3'>
-                        <div class='offset-sm-3 col-sm-6'>
-                            <div class='alert alert-success alert-dismissible fade show' role='alert'>
-                                <strong>$successMessage</strong>
-                                <button class='btn-close' type='button' data-bs-dismiss='alert' aria-label='close'></button>
-                            </div>
-                        </div>
-                    </div>
-                    ";
-                }
-                ?> 
+                <!-- success message -->
+                <?php if (!empty($successMessage)): ?>
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Success:</strong> <?= htmlspecialchars($successMessage) ?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <?php endif; ?>
 
                 <!-- submit button -->
                 <div class="row mb-3">
