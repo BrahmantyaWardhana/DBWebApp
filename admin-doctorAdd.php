@@ -35,6 +35,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $result = $con->query($sql);
 
+        if (! $result) {
+            $errorMessage = "Invalid query: " . $con->error;
+        }
+
         $successMessage = 'New entries successfully added.';
 
         // Reset the form variables
