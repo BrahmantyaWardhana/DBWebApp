@@ -43,6 +43,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Reset the form variables
         $fname = $lname = $specialization = $status = $email = '';
+        header("location: admin-view.php");
+        exit;
     }
 }
 
