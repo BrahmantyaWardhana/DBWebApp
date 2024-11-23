@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errorMessage = 'All fields are required.';
     } else {
         // Prepare and execute the SQL query to insert data into the database
-        $sql = "INSERT INTO doctors (first_name, last_name, specialization, status, email) 
+        $sql = "INSERT INTO Doctor (firstName, lastName, specialization, status, email) 
                 VALUES ('$fname', '$lname', '$specialization', '$status', '$email')";
 
         if (mysqli_query($con, $sql)) {
@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } else {
             $errorMessage = 'Failed to add new entry: ' . mysqli_error($con);
         }
-        
+
         // Reset the form variables
         $fname = $lname = $specialization = $status = $email = '';
     }
