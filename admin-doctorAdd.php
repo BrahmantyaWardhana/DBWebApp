@@ -64,9 +64,9 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
             <?php 
             if ( !empty($errorMessage)) {
                 echo "
-                <div class='alert alert-warning alert-dismissable fade show' roles='alert'>
+                <div class='alert alert-warning alert-dismissable fade show' role='alert'>
                     <strong>$errorMessage</strong>
-                    <button class='btn-close' type ='button' data-bs-dismiss='alert' aria-label='close'</button>
+                    <button class='btn-close' type ='button' data-bs-dismiss='alert' aria-label='close'></button>
                 </div>
                 ";
             }
@@ -76,44 +76,44 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
                 <div class="row mb-3">
                     <label class="col-sm-3 col-from-label">Doctor ID</label>
                     <div class="col-sm-6">
-                        <input type="test" class="form-control" name="doctorID" value="">
+                        <input type="text" class="form-control" name="doctorID" value="">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label class="col-sm-3 col-from-label">First Name</label>
                     <div class="col-sm-6">
-                        <input type="test" class="form-control" name="firstName" value="">
+                        <input type="text" class="form-control" name="firstName" value="">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label class="col-sm-3 col-from-label">Last Name</label>
                     <div class="col-sm-6">
-                        <input type="test" class="form-control" name="lastName" value="">
+                        <input type="text" class="form-control" name="lastName" value="">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label class="col-sm-3 col-from-label">Specialization</label>
                     <div class="col-sm-6">
-                        <input type="test" class="form-control" name="specialization" value="">
+                        <input type="text" class="form-control" name="specialization" value="">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label class="col-sm-3 col-from-label">Status</label>
                     <div class="col-sm-6">
-                        <input type="test" class="form-control" name="status" value="">
+                        <input type="text" class="form-control" name="status" value="">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label class="col-sm-3 col-from-label">Email</label>
                     <div class="col-sm-6">
-                        <input type="test" class="form-control" name="email" value="">
+                        <input type="text" class="form-control" name="email" value="">
                     </div>
                 </div>
 
                 <?php 
                 if ( !empty($successMessage) ) {
                     echo "
-                    <div> class ='row mb-3'>
+                    <div class ='row mb-3'>
                         <div class='offset-sm-3 col-sm-6'>
                             <div class='alert' alert-success alert-dismissible fade show' role='alert'>
                                 <strong>$successMessage</strong>
