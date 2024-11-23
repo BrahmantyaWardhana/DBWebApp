@@ -18,32 +18,21 @@ $email = "";
 
 $errorMessage="";
 
-if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
-    $id = $_POST["doctorID"];
-    $fname = $_POST["firstName"];
-    $lname = $_POST["lastName"];
-    $specialization = $_POST["specialization"];
-    $status = $_POST["status"];
-    $email = $_POST["email"];
-    
-    do {
-        if ( empty($id) || empty($fname) || empty($lname) || empty($specialization) || empty($status) || empty($email) ) {
-            $errorMessage = "All fields are required";
-            break;
-        }
-        
-        // reset entries
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $id = $_POST['doctorID'] ?? '';
+    $fname = $_POST['firstName'] ?? '';
+    $lname = $_POST['lastName'] ?? '';
+    $specialization = $_POST['specialization'] ?? '';
+    $status = $_POST['status'] ?? '';
+    $email = $_POST['email'] ?? '';
 
-        $id = "";
-        $fname = "";
-        $lname = "";
-        $specialization = "";
-        $status = "";
-        $email = "";
-
-        $successMessage = "New entries successfully added";
-
-    } while (false);
+    if (empty($id) || empty($fname) || empty($lname) || empty($specialization) || empty($status) || empty($email)) {
+        $errorMessage = 'All fields are required.';
+    } else {
+        $successMessage = 'New entries successfully added.';
+        // Reset the form variables
+        $id = $fname = $lname = $specialization = $status = $email = '';
+    }
 }
 
 ?>
