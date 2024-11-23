@@ -51,7 +51,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'GET' ) {
 
 } else {
 
-    $id = $_POST['DoctorID'];
+    $id = $_POST['doctorID'];
     $fname = $_POST['firstName'];
     $lname = $_POST['lastName'];
     $specialization = $_POST['specialization'];
