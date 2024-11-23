@@ -44,8 +44,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $errorMessage = "Invalid query: " . $con->error;
         }
 
-        $successMessage = 'New entries successfully added.';
-
         // Reset the form variables
         $fname = $lname = $specialization = $status = $email = '';
         header("location: admin-view.php");
