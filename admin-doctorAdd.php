@@ -60,11 +60,11 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
             <h2 class="display-6 text-center">Update Doctors Table Test</h2>
 
             <?php 
-            if ( !empty($errorMessage)) {
+            if (!empty($errorMessage)) {
                 echo "
-                <div class='alert alert-warning alert-dismissable fade show' role='alert'>
+                <div class='alert alert-warning alert-dismissible fade show' role='alert'>
                     <strong>$errorMessage</strong>
-                    <button class='btn-close' type ='button' data-bs-dismiss='alert' aria-label='close'></button>
+                    <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
                 </div>
                 ";
             }
@@ -138,4 +138,9 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
             <button type="submit">Logout</button>
         </form>
     <script src="js/bootstrap.bundle.min.js"></script>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        This is a test alert message.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
     </body>
