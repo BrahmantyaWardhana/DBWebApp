@@ -63,7 +63,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'GET' ) {
     } else {
         $sql = "UPDATE Doctor SET " . 
         "firstName = '$fname', lastName = '$lname', specialization = '$specialization', status = '$status', email = '$email' " .
-        "WHERE id = $id";
+        "WHERE doctorID = $id";
 
         $result = $con->query($sql);
 
