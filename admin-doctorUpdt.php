@@ -34,7 +34,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'GET' ) {
     $id = $_GET["id"];
 
     // Read row based on id
-    $sql = "SELECT * FROM Doctor WHERE id=$id";
+    $sql = "SELECT * FROM Doctor WHERE doctorID=$id";
     $result = $con->query($sql);
     $row = $result->fetch_assoc();
 
