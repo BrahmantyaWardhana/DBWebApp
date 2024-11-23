@@ -13,7 +13,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'admin') {
     exit;
 }
 
-include_once('db.php');
+include_once('config/db.php');
 
 // initializae variables to record input
 $fname = "";
