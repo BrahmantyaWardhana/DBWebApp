@@ -55,9 +55,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Home Page</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <script src="js/bootstrap.bundle.min.js"></script>
     </head>
-    <body>
         <div class="container my-5">
             <h2 class="display-6 text-center">Update Doctors Table Test</h2>
 
@@ -113,11 +111,11 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
                 <?php 
                 if ( !empty($successMessage) ) {
                     echo "
-                    <div class ='row mb-3'>
+                    <div class='row mb-3'>
                         <div class='offset-sm-3 col-sm-6'>
-                            <div class='alert' alert-success alert-dismissible fade show' role='alert'>
+                            <div class='alert alert-success alert-dismissible fade show' role='alert'>
                                 <strong>$successMessage</strong>
-                                <button class='btn-close' type ='button' data-bs-dismiss='alert' aria-label='close'</button>
+                                <button class='btn-close' type='button' data-bs-dismiss='alert' aria-label='close'></button>
                             </div>
                         </div>
                     </div>
@@ -139,4 +137,5 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
         <form action="logout.php" method="POST">
             <button type="submit">Logout</button>
         </form>
+    <script src="js/bootstrap.bundle.min.js"></script>
     </body>
