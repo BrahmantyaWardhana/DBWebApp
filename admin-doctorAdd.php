@@ -117,9 +117,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <button type="submit">Logout</button>
         </form>
     <script src="js/bootstrap.bundle.min.js"></script>
-    <div class="alert alert-warning alert-dismissible fade show" role="alert">
-        This is a test alert message.
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-
     </body>
