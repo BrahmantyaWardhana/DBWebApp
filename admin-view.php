@@ -37,6 +37,8 @@ $doctor = mysqli_query($con,$query);
                     <div class="card mt-5">
                         <div class="card-reader">
                             <h2 class="display-6 text-center">Display Doctors Table Test</h2>
+                            <a class="btn btn-primary" href="admin-doctorAdd.php" role="button">New Entry</a>
+                            <br>
                         </div>
                         <div class="card-body">
                             <table class="table table-bordered">
