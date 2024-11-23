@@ -9,7 +9,6 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'admin') {
 }
 
 // initializae variables to record input
-$id = "";
 $fname = "";
 $lname = "";
 $specialization = "";
@@ -19,19 +18,18 @@ $email = "";
 $errorMessage="";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $id = $_POST['doctorID'] ?? '';
     $fname = $_POST['firstName'] ?? '';
     $lname = $_POST['lastName'] ?? '';
     $specialization = $_POST['specialization'] ?? '';
     $status = $_POST['status'] ?? '';
     $email = $_POST['email'] ?? '';
 
-    if (empty($id) || empty($fname) || empty($lname) || empty($specialization) || empty($status) || empty($email)) {
+    if (empty($fname) || empty($lname) || empty($specialization) || empty($status) || empty($email)) {
         $errorMessage = 'All fields are required.';
     } else {
         $successMessage = 'New entries successfully added.';
         // Reset the form variables
-        $id = $fname = $lname = $specialization = $status = $email = '';
+        $fname = $lname = $specialization = $status = $email = '';
     }
 }
 
@@ -47,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     </head>
         <div class="container my-5">
-            <h2 class="display-6 text-center">Update Doctors Table Test</h2>
+            <h2 class="display-6 text-center">Add Doctors Table Test</h2>
 
             <!-- error message -->
             <?php if (!empty($errorMessage)): ?>
@@ -58,12 +56,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <?php endif; ?>
 
             <form method="POST">
-                <div class="row mb-3">
-                    <label class="col-sm-3 col-from-label">Doctor ID</label>
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control" name="doctorID" value="">
-                    </div>
-                </div>
                 <div class="row mb-3">
                     <label class="col-sm-3 col-from-label">First Name</label>
                     <div class="col-sm-6">
