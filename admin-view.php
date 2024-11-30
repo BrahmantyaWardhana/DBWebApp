@@ -75,6 +75,44 @@ $doctor = mysqli_query($con,$query);
                             </table>
                         </div>
                         <!-- End of Doctor view -->
+                        <!-- Start of Doctor view -->
+                        <div class="card-reader">
+                            <h2 class="display-6 text-center">Display Doctors Table Test</h2>
+                            <a class="btn btn-primary" href="admin-doctorAdd.php" role="button">New Entry</a>
+                            <br>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th> Doctor ID </th>
+                                        <th> First Name </th>
+                                        <th> Last Name </th>
+                                        <th> Specialization </th>
+                                        <th> Status </th>
+                                        <th> Email </th>
+                                        <th> Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php while ($row = mysqli_fetch_assoc($doctor)) { ?>
+                                    <tr>
+                                        <td><?php echo $row['doctorID']; ?></td>
+                                        <td><?php echo $row['firstName']; ?></td>
+                                        <td><?php echo $row['lastName']; ?></td>
+                                        <td><?php echo $row['specialization']; ?></td>
+                                        <td><?php echo $row['status']; ?></td>
+                                        <td><?php echo $row['email']; ?></td>
+                                        <td> 
+                                            <a class="btn btn-primary btn-sm" href="admin-doctorUpdt.php?id=<?php echo $row['doctorID']; ?>">Edit</a>
+                                            <a class="btn btn-danger btn-sm" href="admin-doctorDel.php?id=<?php echo $row['doctorID']; ?>">Delete</a>
+                                        </td>
+                                    </tr>
+                                    <?php } ?>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- End of Doctor view -->
                     </div>
                 </div>
             </div>
