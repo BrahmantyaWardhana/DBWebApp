@@ -97,9 +97,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-    <form action="logout.php" method="POST">
-        <button type="submit">Logout</button>
-    </form>
     <div class="container my-5">
         <h2 class="display-6 text-center">Update Appointment</h2>
 
