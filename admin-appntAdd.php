@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $status = $_POST['status'];
     $reasonForVisit = $_POST['reasonForVisit'];
 
-    if (empty($fname) || empty($lname) || empty($specialization) || empty($status) || empty($email) || empty($clinicID)) {
+    if (empty($patientID) || empty($doctorID) || empty($apptDate) || empty($apptTime) || empty($status) || empty($reasonForVisit)) {
         $errorMessage = 'All fields are required.';
     } else {
         // Prepare and execute the SQL query to insert data into the database
