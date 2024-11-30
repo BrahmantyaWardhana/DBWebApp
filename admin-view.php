@@ -75,6 +75,8 @@ $doctor = mysqli_query($con,$query);
                             </table>
                         </div>
                         <!-- End of Doctor view -->
+                    </div>
+                    <div class="card mt-5">
                         <!-- Start of Doctor view -->
                         <div class="card-reader">
                             <h2 class="display-6 text-center">Display Doctors Table Test</h2>
