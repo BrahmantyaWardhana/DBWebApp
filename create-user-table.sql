@@ -26,7 +26,9 @@ CREATE TABLE Doctor (
     lastName VARCHAR(25),
     specialization VARCHAR(40),
     status ENUM('active', 'inactive') NOT NULL,
-    email VARCHAR(40)
+    email VARCHAR(40),
+    clinicID int,
+    FOREIGN KEY (clinicID) REFERENCES Clinic(clinicID)
 );
 
 -- Patients
@@ -80,9 +82,7 @@ CREATE TABLE Schedule (
 CREATE TABLE Clinic (
     clinicID INT AUTO_INCREMENT PRIMARY KEY,
     clinicName VARCHAR(100) NOT NULL,
-    address VARCHAR(255) NOT NULL,
-    doctorID INT,
-    FOREIGN KEY (doctorID) REFERENCES Doctor(doctorID)
+    address VARCHAR(255) NOT NULL
 );
 
 -- Insert values for testing

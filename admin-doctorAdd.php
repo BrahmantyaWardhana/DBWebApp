@@ -21,6 +21,7 @@ $lname = "";
 $specialization = "";
 $status = "";
 $email = "";
+$clinicID = "";
 
 $errorMessage="";
 
@@ -30,13 +31,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $specialization = $_POST['specialization'];
     $status = $_POST['status'];
     $email = $_POST['email'];
+    $clinicID = $_POST['clinicID'];
 
-    if (empty($fname) || empty($lname) || empty($specialization) || empty($status) || empty($email)) {
+    if (empty($fname) || empty($lname) || empty($specialization) || empty($status) || empty($email) || empty($clinicID)) {
         $errorMessage = 'All fields are required.';
     } else {
         // Prepare and execute the SQL query to insert data into the database
         $sql = "INSERT INTO Doctor (firstName, lastName, specialization, status, email) " .
-                "VALUES ('$fname', '$lname', '$specialization', '$status', '$email')";
+                "VALUES ('$fname', '$lname', '$specialization', '$status', '$email', '$clinicID')";
 
         $result = $con->query($sql);
 
@@ -45,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         // Reset the form variables
-        $fname = $lname = $specialization = $status = $email = '';
+        $fname = $lname = $specialization = $status = $email = $clinicID = '';
         header("location: admin-view.php");
         exit;
     }
@@ -102,6 +104,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <label class="col-sm-3 col-from-label">Email</label>
                     <div class="col-sm-6">
                         <input type="text" class="form-control" name="email" value="">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-3 col-from-label">Clinic ID</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" name="clinicID" value="">
                     </div>
                 </div>
 

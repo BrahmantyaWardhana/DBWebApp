@@ -68,7 +68,8 @@ $clinic = mysqli_query($con,$query);
                                         <th> Specialization </th>
                                         <th> Status </th>
                                         <th> Email </th>
-                                        <th> Action</th>
+                                        <th> Clinic ID </th>
+                                        <th> Action </th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -80,6 +81,7 @@ $clinic = mysqli_query($con,$query);
                                         <td><?php echo $row['specialization']; ?></td>
                                         <td><?php echo $row['status']; ?></td>
                                         <td><?php echo $row['email']; ?></td>
+                                        <td><?php echo $row['clinicID']; ?></td>
                                         <td> 
                                             <a class="btn btn-primary btn-sm" href="admin-doctorUpdt.php?id=<?php echo $row['doctorID']; ?>">Edit</a>
                                             <a class="btn btn-danger btn-sm" href="admin-doctorDel.php?id=<?php echo $row['doctorID']; ?>">Delete</a>
@@ -110,6 +112,7 @@ $clinic = mysqli_query($con,$query);
                                         <th> Address </th>
                                         <th> Gender </th>
                                         <th> Birth Date </th>
+                                        <th> Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -133,6 +136,162 @@ $clinic = mysqli_query($con,$query);
                             </table>
                         </div>
                         <!-- End of patient view -->
+                    </div>
+                    <div class="card mt-5">
+                        <!-- Start of Appointment view -->
+                        <div class="card-reader">
+                            <h2 class="display-6 text-center">Appointments Table</h2>
+                            <a class="btn btn-primary" href="admin-appntAdd.php" role="button">New Entry</a>
+                            <br>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th> Appointment ID </th>
+                                        <th> Patient ID </th>
+                                        <th> Doctor ID </th>
+                                        <th> Appointment Date </th>
+                                        <th> Appointment Time </th>
+                                        <th> Status </th>
+                                        <th> Reason for Visit </th>
+                                        <th> Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php while ($row = mysqli_fetch_assoc($appointment)) { ?>
+                                    <tr>
+                                        <td><?php echo $row['apptID']; ?></td>
+                                        <td><?php echo $row['patientID']; ?></td>
+                                        <td><?php echo $row['doctorID']; ?></td>
+                                        <td><?php echo $row['apptDate']; ?></td>
+                                        <td><?php echo $row['apptTime']; ?></td>
+                                        <td><?php echo $row['status']; ?></td>
+                                        <td><?php echo $row['reasonForVisit']; ?></td>
+                                        <td> 
+                                            <a class="btn btn-primary btn-sm" href="admin-appntUpdt.php?id=<?php echo $row['apptID']; ?>">Edit</a>
+                                            <a class="btn btn-danger btn-sm" href="admin-appntDel.php?id=<?php echo $row['apptID']; ?>">Delete</a>
+                                        </td>
+                                    </tr>
+                                    <?php } ?>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- End of Appointment view -->
+                    </div>
+                    <div class="card mt-5">
+                        <!-- Start of Payment view -->
+                        <div class="card-reader">
+                            <h2 class="display-6 text-center">Payments Table</h2>
+                            <a class="btn btn-primary" href="admin-pmntAdd.php" role="button">New Entry</a>
+                            <br>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th> Payment ID </th>
+                                        <th> Appointment ID </th>
+                                        <th> Payment Amount </th>
+                                        <th> Payment Date </th>
+                                        <th> Payment Method </th>
+                                        <th> Status </th>
+                                        <th> Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php while ($row = mysqli_fetch_assoc($payment)) { ?>
+                                    <tr>
+                                        <td><?php echo $row['paymentID']; ?></td>
+                                        <td><?php echo $row['apptID']; ?></td>
+                                        <td><?php echo $row['amount']; ?></td>
+                                        <td><?php echo $row['paymentDate']; ?></td>
+                                        <td><?php echo $row['paymentMethod']; ?></td>
+                                        <td><?php echo $row['status']; ?></td>
+                                        <td> 
+                                            <a class="btn btn-primary btn-sm" href="admin-pmntUpdt.php?id=<?php echo $row['paymentID']; ?>">Edit</a>
+                                            <a class="btn btn-danger btn-sm" href="admin-pmntDel.php?id=<?php echo $row['paymentID']; ?>">Delete</a>
+                                        </td>
+                                    </tr>
+                                    <?php } ?>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- End of Payment view -->
+                    </div>
+                    <div class="card mt-5">
+                        <!-- Start of Schedule view -->
+                        <div class="card-reader">
+                            <h2 class="display-6 text-center">Schedule Table</h2>
+                            <a class="btn btn-primary" href="admin-scheduleAdd.php" role="button">New Entry</a>
+                            <br>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th> Schedule ID </th>
+                                        <th> Doctor ID </th>
+                                        <th> Day of the Week </th>
+                                        <th> Start Time </th>
+                                        <th> End Time </th>
+                                        <th> Clinic </th>
+                                        <th> Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php while ($row = mysqli_fetch_assoc($schedule)) { ?>
+                                    <tr>
+                                        <td><?php echo $row['scheduleID']; ?></td>
+                                        <td><?php echo $row['doctorID']; ?></td>
+                                        <td><?php echo $row['dayOfTheWeek']; ?></td>
+                                        <td><?php echo $row['startTime']; ?></td>
+                                        <td><?php echo $row['endTime']; ?></td>
+                                        <td><?php echo $row['clinicName']; ?></td>
+                                        <td> 
+                                            <a class="btn btn-primary btn-sm" href="admin-scheduleUpdt.php?id=<?php echo $row['scheduleID']; ?>">Edit</a>
+                                            <a class="btn btn-danger btn-sm" href="admin-scheduleDel.php?id=<?php echo $row['scheduleID']; ?>">Delete</a>
+                                        </td>
+                                    </tr>
+                                    <?php } ?>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- End of Schedule view -->
+                    </div>
+                    <div class="card mt-5">
+                        <!-- Start of Clinic view -->
+                        <div class="card-reader">
+                            <h2 class="display-6 text-center">Schedule Table</h2>
+                            <a class="btn btn-primary" href="admin-clinicAdd.php" role="button">New Entry</a>
+                            <br>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th> Clinic ID </th>
+                                        <th> Clinic Name </th>
+                                        <th> Address </th>
+                                        <th> Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php while ($row = mysqli_fetch_assoc($schedule)) { ?>
+                                    <tr>
+                                        <td><?php echo $row['clinicID']; ?></td>
+                                        <td><?php echo $row['clinicName']; ?></td>
+                                        <td><?php echo $row['address']; ?></td>
+                                        <td> 
+                                            <a class="btn btn-primary btn-sm" href="admin-clinicUpdt.php?id=<?php echo $row['clinicID']; ?>">Edit</a>
+                                            <a class="btn btn-danger btn-sm" href="admin-clinicDel.php?id=<?php echo $row['clinicID']; ?>">Delete</a>
+                                        </td>
+                                    </tr>
+                                    <?php } ?>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- End of Clinic view -->
                     </div>
                 </div>
             </div>
