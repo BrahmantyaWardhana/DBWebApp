@@ -92,7 +92,6 @@ INSERT INTO Clinic (clinicName, address) VALUES
 ('Uptown Family Care', '456 W Dakin St, Chicago, IL 60613'),
 ('Eastside Medical Center', '789 E 79th St, Chicago, IL 60619');
 
-INSERT INTO Doctor (firstName, lastName, specialization, status, email)
-VALUES
-    ('John', 'Doe', 'Cardiology', 'active', 'jdoe@hospital.com'),
-    ('Jane', 'Smith', 'Pediatrics', 'inactive', 'jsmith@hospital.com');
+INSERT INTO Doctor (firstName, lastName, specialization, status, email) VALUES
+('John', 'Doe', 'Cardiology', 'active', 'jdoe@hospital.com'),
+('Jane', 'Smith', 'Pediatrics', 'inactive', 'jsmith@hospital.com');
