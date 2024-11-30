@@ -265,7 +265,7 @@ $clinic = mysqli_query($con,$query);
                     <div class="card mt-5">
                         <!-- Start of Clinic view -->
                         <div class="card-reader">
-                            <h2 class="display-6 text-center">Schedule Table</h2>
+                            <h2 class="display-6 text-center">Clinic Table</h2>
                             <a class="btn btn-primary" href="admin-clinicAdd.php" role="button">New Entry</a>
                             <br>
                         </div>
