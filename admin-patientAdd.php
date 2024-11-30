@@ -37,6 +37,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (empty($fname) || empty($lname) || empty($phone) || empty($email) || empty($address) || empty($gender) || empty($birthdate)) {
         $errorMessage = 'All fields are required.';
+    }
+
+    elseif (!DateTime::createFromFormat('Y-m-d', $birthdate) || DateTime::createFromFormat('Y-m-d', $birthdate)->format('Y-m-d') !== $birthdate) {
+        $errorMessage='Invalid birthdate format. Please use YYYY-MM-DD.';
+
     } else {
         // Prepare and execute the SQL query to insert data into the database
         $sql = "INSERT INTO Patients (firstName, lastName, phone, email, address, gender, birthdate) " .
