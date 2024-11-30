@@ -25,10 +25,10 @@ $query = "SELECT * FROM Payments";
 $payment = mysqli_query($con,$query);
 
 $query = "SELECT * FROM Schedule";
-$patient = mysqli_query($con,$query);
+$schedule = mysqli_query($con,$query);
 
 $query = "SELECT * FROM Clinic";
-$patient = mysqli_query($con,$query);
+$clinic = mysqli_query($con,$query);
 
 // debugging check query
 #if (!$doctor) {
