@@ -26,12 +26,12 @@ $reasonForVisit = "";
 $errorMessage="";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $patientID = $_POST['firstName'];
-    $doctorID = $_POST['lastName'];
-    $apptDate = $_POST['specialization'];
-    $apptTime = $_POST['status'];
-    $status = $_POST['email'];
-    $reasonForVisit = $_POST['clinicID'];
+    $patientID = $_POST['patientID'];
+    $doctorID = $_POST['doctorID'];
+    $apptDate = $_POST['apptDate'];
+    $apptTime = $_POST['apptTime'];
+    $status = $_POST['status'];
+    $reasonForVisit = $_POST['reasonForVisit'];
 
     if (empty($fname) || empty($lname) || empty($specialization) || empty($status) || empty($email) || empty($clinicID)) {
         $errorMessage = 'All fields are required.';
