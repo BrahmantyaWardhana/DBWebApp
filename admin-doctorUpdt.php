@@ -136,7 +136,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'GET' ) {
                 <div class="row mb-3">
                     <label class="col-sm-3 col-from-label">Clinic ID</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" name="email" value="<?php echo $clinicID ?>">
+                        <input type="text" class="form-control" name="clinicID" value="<?php echo $clinicID ?>">
                     </div>
                 </div>
 
