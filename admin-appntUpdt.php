@@ -89,83 +89,84 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update Appointment</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-</head>
-<body>
-    <div class="container my-5">
-        <h2 class="display-6 text-center">Update Appointment</h2>
-
-        <!-- Error message -->
-        <?php if (!empty($errorMessage)): ?>
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <strong>Error:</strong> <?= htmlspecialchars($errorMessage) ?>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-        <?php endif; ?>
-
-        <!-- Success message -->
-        <?php if (!empty($successMessage)): ?>
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <strong>Success:</strong> <?= htmlspecialchars($successMessage) ?>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-        <?php endif; ?>
-
-        <!-- Update Appointment Form -->
-        <form method="POST">
-            <input type="hidden" name="apptID" value="<?php echo $apptID ?>">
-            <div class="row mb-3">
-                <label class="col-sm-3 col-from-label">Patient ID</label>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" name="patientID" value="<?php echo $patientID ?>">
-                </div>
-            </div>
-            <div class="row mb-3">
-                <label class="col-sm-3 col-from-label">Doctor ID</label>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" name="doctorID" value="<?php echo $doctorID ?>">
-                </div>
-            </div>
-            <div class="row mb-3">
-                <label class="col-sm-3 col-from-label">Appointment Date</label>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" name="apptDate" value="<?php echo $apptDate ?>">
-                </div>
-            </div>
-            <div class="row mb-3">
-                <label class="col-sm-3 col-from-label">Appointment Time</label>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" name="apptTime" value="<?php echo $apptTime ?>">
-                </div>
-            </div>
-            <div class="row mb-3">
-                <label class="col-sm-3 col-from-label">Status</label>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" name="status" value="<?php echo $status ?>">
-                </div>
-            </div>
-            <div class="row mb-3">
-                <label class="col-sm-3 col-from-label">Reason For Visit</label>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" name="reasonForVisit" value="<?php echo $reasonForVisit ?>">
-                </div>
-            </div>
-
-            <!-- Submit Button -->
-            <div class="row mb-3">
-                <div class="offset-sm-3 col-sm-3 d-grid">
-                    <button type="submit" class="btn btn-primary">Update</button>
-                </div>
-                <div class="col-sm-3 d-grid">
-                    <a class="btn btn-outline-primary" href="admin-view.php" role="button">Cancel</a>
-                </div>
-            </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home Page</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    </head>
+        <form action="logout.php" method="POST">
+            <button type="submit">Logout</button>
         </form>
-    </div>
-</body>
+        <div class="container my-5">
+            <h2 class="display-6 text-center">Add Appointment Table</h2>
+
+            <!-- error message -->
+            <?php if (!empty($errorMessage)): ?>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Error:</strong> <?= htmlspecialchars($errorMessage) ?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <?php endif; ?>
+
+            <form method="POST">
+                <input type="hidden" name="appointmentID" value="<?php echo $apptid ?>">
+                <div class="row mb-3">
+                    <label class="col-sm-3 col-from-label">Patient ID</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" name="patientID" value="<?php echo $patientID ?>">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-3 col-from-label">Doctor ID</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" name="doctorID" value="<?php echo $doctorID ?>">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-3 col-from-label">Appointment Date</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" name="apptDate" value="<?php echo $apptDate ?>">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-3 col-from-label">Appointment Time</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" name="apptTime" value="<?php echo $apptTime ?>">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-3 col-from-label">Status</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" name="status" value="<?php echo $status ?>">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-3 col-from-label">Reason For Visit</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" name="reasonForVisit" value="<?php echo $reasonForVisit ?>">
+                    </div>
+                </div>
+
+                <!-- success message -->
+                <?php if (!empty($successMessage)): ?>
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Success:</strong> <?= htmlspecialchars($successMessage) ?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <?php endif; ?>
+
+                <!-- submit button -->
+                <div class="row mb-3">
+                    <div class="offset-sm-3 col-sm-3 d-grid">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                    <div class="col-sm-3 d-grid">
+                        <a class="btn btn-outline-primary" href="admin-view.php" role="button">Cancel</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </body>
 </html>
