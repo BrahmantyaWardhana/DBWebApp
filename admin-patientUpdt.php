@@ -65,6 +65,11 @@ if ( $_SERVER['REQUEST_METHOD'] == 'GET' ) {
 
     if (empty($fname) || empty($lname) || empty($phone) || empty($email) || empty($address) || empty($gender) || empty($birthdate)) {
         $errorMessage = 'All fields are required.';
+    }
+    
+    elseif (!DateTime::createFromFormat('Y-m-d', $birthdate) || DateTime::createFromFormat('Y-m-d', $birthdate)->format('Y-m-d') !== $birthdate) {
+        $errorMessage='Invalid birthdate format. Please use YYYY-MM-DD.';
+
     } else {
         $sql = "UPDATE Patients SET " . 
         "firstName = '$fname', lastName = '$lname', phone = '$phone', email = '$email', address = '$address', gender = '$gender', birthdate = '$birthdate' " .
