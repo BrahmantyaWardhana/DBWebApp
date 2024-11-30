@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errorMessage = 'All fields are required.';
     } else {
         // Prepare and execute the SQL query to insert data into the database
-        $sql = "INSERT INTO Doctor (firstName, lastName, phone, email, address, gender, birthdate) " .
+        $sql = "INSERT INTO Patients (firstName, lastName, phone, email, address, gender, birthdate) " .
                 "VALUES ('$fname', '$lname', '$phone', '$email', '$address', '$gender', '$birthdate')";
 
         $result = $con->query($sql);
