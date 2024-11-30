@@ -86,6 +86,12 @@ CREATE TABLE Clinic (
 );
 
 -- Insert values for testing
+
+INSERT INTO Clinic (clinicName, address) VALUES
+('Downtown Health Clinic', '123 W Randolph St, Chicago, IL 60601'),
+('Uptown Family Care', '456 W Dakin St, Chicago, IL 60613'),
+('Eastside Medical Center', '789 E 79th St, Chicago, IL 60619');
+
 INSERT INTO Doctor (firstName, lastName, specialization, status, email)
 VALUES
     ('John', 'Doe', 'Cardiology', 'active', 'jdoe@hospital.com'),
