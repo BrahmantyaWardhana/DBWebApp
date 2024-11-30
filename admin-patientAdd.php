@@ -38,26 +38,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($fname) || empty($lname) || empty($phone) || empty($email) || empty($address) || empty($gender) || empty($birthdate)) {
         $errorMessage = 'All fields are required.';
     } else {
-        // Validate birthdate format (YYYY-MM-DD)
-        $birthDateTime = DateTime::createFromFormat('Y-m-d', $birthdate);
-        if (!$birthDateTime || $birthDateTime->format('Y-m-d') !== $birthdate) {
-            $errorMessage = 'Invalid birthdate format. Please use YYYY-MM-DD.';
-        } else {
-            // Prepare and execute the SQL query to insert data into the database
-            $sql = "INSERT INTO Patients (firstName, lastName, phone, email, address, gender, birthdate) " .
-                   "VALUES ('$fname', '$lname', '$phone', '$email', '$address', '$gender', '$birthdate')";
+        // Prepare and execute the SQL query to insert data into the database
+        $sql = "INSERT INTO Patients (firstName, lastName, phone, email, address, gender, birthdate) " .
+                "VALUES ('$fname', '$lname', '$phone', '$email', '$address', '$gender', '$birthdate')";
 
-            $result = $con->query($sql);
+        $result = $con->query($sql);
 
-            if (!$result) {
-                $errorMessage = "Invalid query: " . $con->error;
-            } else {
-                // Reset the form variables
-                $fname = $lname = $phone = $email = $address = $gender = $birthdate = '';
-                header("location: admin-view.php");
-                exit;
-            }
+        if (! $result) {
+            $errorMessage = "Invalid query: " . $con->error;
         }
+
+        // Reset the form variables
+        $fname=$lname=$phone=$email=$address=$gender=$birthdate= '';
+        header("location: admin-view.php");
+        exit;
     }
 }
 
