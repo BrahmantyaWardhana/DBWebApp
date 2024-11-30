@@ -21,6 +21,7 @@ $lname = "";
 $specialization = "";
 $status = "";
 $email = "";
+$clinicID = "";
 
 $errorMessage = "";
 $successMessage = "";
@@ -48,6 +49,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'GET' ) {
     $specialization = $row["specialization"];
     $status = $row["status"];
     $email = $row["email"];
+    $clinicID = $row["clinicID"];
 
 } else {
 
@@ -57,12 +59,13 @@ if ( $_SERVER['REQUEST_METHOD'] == 'GET' ) {
     $specialization = $_POST['specialization'];
     $status = $_POST['status'];
     $email = $_POST['email'];
+    $clinicID = $_POST['clinicID'];
 
-    if (empty($fname) || empty($lname) || empty($specialization) || empty($status) || empty($email)) {
+    if (empty($fname) || empty($lname) || empty($specialization) || empty($status) || empty($email) || empty($clinicID)) {
         $errorMessage = 'All fields are required.';
     } else {
         $sql = "UPDATE Doctor SET " . 
-        "firstName = '$fname', lastName = '$lname', specialization = '$specialization', status = '$status', email = '$email' " .
+        "firstName = '$fname', lastName = '$lname', specialization = '$specialization', status = '$status', email = '$email', clinicID = '$clinicID' " .
         "WHERE doctorID = $id";
 
         $result = $con->query($sql);
@@ -128,6 +131,12 @@ if ( $_SERVER['REQUEST_METHOD'] == 'GET' ) {
                     <label class="col-sm-3 col-from-label">Email</label>
                     <div class="col-sm-6">
                         <input type="text" class="form-control" name="email" value="<?php echo $email ?>">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-3 col-from-label">Clinic ID</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" name="email" value="<?php echo $clinicID ?>">
                     </div>
                 </div>
 
