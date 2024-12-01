@@ -28,7 +28,7 @@ $successMessage = "";
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     // Check if 'apptID' parameter exists in the URL
-    if (!isset($_GET['apptID'])) {
+    if (!isset($_GET['id'])) {
         header("Location: admin-view.php");
         exit;
     }
