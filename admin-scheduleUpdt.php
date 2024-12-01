@@ -96,29 +96,29 @@ if ( $_SERVER['REQUEST_METHOD'] == 'GET' ) {
             <?php endif; ?>
 
             <form method="POST">
-                <input type="hidden" name="paymentID" value="<?php echo $scheduleID ?>">
+                <input type="hidden" name="scheduleID" value="<?php echo $scheduleID ?>">
                 <div class="row mb-3">
                     <label class="col-sm-3 col-from-label">Doctor ID</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" name="doctorID" value="<?php echo $apptID ?>">
+                        <input type="text" class="form-control" name="doctorID" value="<?php echo $doctorID ?>">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label class="col-sm-3 col-from-label">Day of the Week</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" name="dayOfWeek" value="<?php echo $amount ?>">
+                        <input type="text" class="form-control" name="dayOfWeek" value="<?php echo $dayOfWeek ?>">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label class="col-sm-3 col-from-label">Start Time</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" name="startTime" value="<?php echo $paymentDate ?>">
+                        <input type="text" class="form-control" name="startTime" value="<?php echo $startTime ?>">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label class="col-sm-3 col-from-label">End Time</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" name="endTime" value="<?php echo $paymentMethod ?>">
+                        <input type="text" class="form-control" name="endTime" value="<?php echo $endTime ?>">
                     </div>
                 </div>
 
