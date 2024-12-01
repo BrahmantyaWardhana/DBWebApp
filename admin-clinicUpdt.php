@@ -84,7 +84,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'GET' ) {
             <button type="submit">Logout</button>
         </form>
         <div class="container my-5">
-            <h2 class="display-6 text-center">Add Clinics Table</h2>
+            <h2 class="display-6 text-center">Update Clinics Table</h2>
 
             <!-- error message -->
             <?php if (!empty($errorMessage)): ?>

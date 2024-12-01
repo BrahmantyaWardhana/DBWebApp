@@ -97,8 +97,12 @@ if ( $_SERVER['REQUEST_METHOD'] == 'GET' ) {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     </head>
+    <body>
+        <form action="logout.php" method="POST">
+            <button type="submit">Logout</button>
+        </form>
         <div class="container my-5">
-            <h2 class="display-6 text-center">Add Patients</h2>
+            <h2 class="display-6 text-center">Update Patients Table</h2>
 
             <!-- error message -->
             <?php if (!empty($errorMessage)): ?>
@@ -172,7 +176,4 @@ if ( $_SERVER['REQUEST_METHOD'] == 'GET' ) {
                 </div>
             </form>
         </div>
-        <form action="logout.php" method="POST">
-            <button type="submit">Logout</button>
-        </form>
     </body>

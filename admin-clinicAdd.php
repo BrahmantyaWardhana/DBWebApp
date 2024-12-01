@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <button type="submit">Logout</button>
         </form>
         <div class="container my-5">
-            <h2 class="display-6 text-center">Add Payments Table</h2>
+            <h2 class="display-6 text-center">Add Clinics Table</h2>
 
             <!-- error message -->
             <?php if (!empty($errorMessage)): ?>
