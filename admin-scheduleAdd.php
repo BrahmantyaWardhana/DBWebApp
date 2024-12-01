@@ -24,7 +24,6 @@ $endTime = "";
 $errorMessage="";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $scheduleID = $_POST['scheduleID'];
     $doctorID = $_POST['doctorID'];
     $dayOfWeek = $_POST['dayOfWeek'];
     $startTime = $_POST['startTime'];
