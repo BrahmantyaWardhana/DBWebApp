@@ -74,7 +74,6 @@ CREATE TABLE Schedule (
     dayOfWeek ENUM('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday') NOT NULL,
     startTime TIME NOT NULL,
     endTime TIME NOT NULL,
-    clinicName VARCHAR(100) NOT NULL,
     FOREIGN KEY (doctorID) REFERENCES Doctor(doctorID)
 );
 
