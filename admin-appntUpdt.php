@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 } else {
 
     // Post data to update appointment
-    $apptID = $_POST['apptID'];
+    $apptID = $_POST['id'];
     $patientID = $_POST['patientID'];
     $doctorID = $_POST['doctorID'];
     $apptDate = $_POST['apptDate'];
