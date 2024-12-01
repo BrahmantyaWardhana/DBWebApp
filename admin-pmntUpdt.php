@@ -34,7 +34,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'GET' ) {
     $paymentID = $_GET["id"];
 
     // Read row based on id
-    $sql = "SELECT * FROM Payments WHERE PaymentID=$id";
+    $sql = "SELECT * FROM Payments WHERE PaymentID=$paymentID";
     $result = $con->query($sql);
     $row = $result->fetch_assoc();
 
