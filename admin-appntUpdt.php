@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         // Prepare and execute SQL query to update appointment
         $sql = "UPDATE Appointment SET " .
             "patientID = '$patientID', doctorID = '$doctorID', apptDate = '$apptDate', apptTime = '$apptTime', " .
-            "status = '$status', reasonForVisit = '$reasonForVisit' WHERE apptID = $id";
+            "status = '$status', reasonForVisit = '$reasonForVisit' WHERE apptID = '$apptID'";
 
         $result = $con->query($sql);
 
