@@ -250,7 +250,6 @@ $clinic = mysqli_query($con,$query);
                                         <td><?php echo $row['dayOfTheWeek']; ?></td>
                                         <td><?php echo $row['startTime']; ?></td>
                                         <td><?php echo $row['endTime']; ?></td>
-                                        <td><?php echo $row['clinicName']; ?></td>
                                         <td> 
                                             <a class="btn btn-primary btn-sm" href="admin-scheduleUpdt.php?id=<?php echo $row['scheduleID']; ?>">Edit</a>
                                             <a class="btn btn-danger btn-sm" href="admin-scheduleDel.php?id=<?php echo $row['scheduleID']; ?>">Delete</a>
