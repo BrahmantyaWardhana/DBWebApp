@@ -102,7 +102,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'GET' ) {
             <?php endif; ?>
 
             <form method="POST">
-                <input type="text" name="doctorID" value="<?php echo $id ?>">
+                <input type="hidden" name="doctorID" value="<?php echo $id ?>">
                 <div class="row mb-3">
                     <label class="col-sm-3 col-from-label">First Name</label>
                     <div class="col-sm-6">
