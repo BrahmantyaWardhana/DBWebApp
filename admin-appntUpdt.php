@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 } else {
 
     // Post data to update appointment
-    $apptID = $_POST['id'];
+    $apptID = $_POST['apptID'];
     $patientID = $_POST['patientID'];
     $doctorID = $_POST['doctorID'];
     $apptDate = $_POST['apptDate'];
@@ -111,7 +111,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             <?php endif; ?>
 
             <form method="POST">
-                <input type="hidden" name="appointmentID" value="<?php echo $apptid ?>">
+                <input type="hidden" name="apptID" value="<?php echo $apptid ?>">
                 <div class="row mb-3">
                     <label class="col-sm-3 col-from-label">Patient ID</label>
                     <div class="col-sm-6">
