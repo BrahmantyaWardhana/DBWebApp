@@ -74,13 +74,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <form method="POST">
                 <div class="row mb-3">
-                    <label class="col-sm-3 col-from-label">Doctor ID</label>
+                    <label class="col-sm-3 col-from-label">Clinic Name</label>
                     <div class="col-sm-6">
                         <input type="text" class="form-control" name="clinicName" value="">
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label class="col-sm-3 col-from-label">Day</label>
+                    <label class="col-sm-3 col-from-label">Address</label>
                     <div class="col-sm-6">
                         <input type="text" class="form-control" name="address" value="">
                     </div>
