@@ -238,7 +238,6 @@ $clinic = mysqli_query($con,$query);
                                         <th> Day of the Week </th>
                                         <th> Start Time </th>
                                         <th> End Time </th>
-                                        <th> Clinic </th>
                                         <th> Action</th>
                                     </tr>
                                 </thead>
