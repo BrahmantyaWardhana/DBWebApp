@@ -111,7 +111,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             <?php endif; ?>
 
             <form method="POST">
-                <input type="hidden" name="apptID" value="<?php echo $apptid ?>">
+                <input type="text" name="apptID" value="<?php echo $apptid ?>">
                 <div class="row mb-3">
                     <label class="col-sm-3 col-from-label">Patient ID</label>
                     <div class="col-sm-6">
