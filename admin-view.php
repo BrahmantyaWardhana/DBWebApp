@@ -246,7 +246,7 @@ $clinic = mysqli_query($con,$query);
                                     <tr>
                                         <td><?php echo $row['scheduleID']; ?></td>
                                         <td><?php echo $row['doctorID']; ?></td>
-                                        <td><?php echo $row['dayOfTheWeek']; ?></td>
+                                        <td><?php echo $row['dayOfWeek']; ?></td>
                                         <td><?php echo $row['startTime']; ?></td>
                                         <td><?php echo $row['endTime']; ?></td>
                                         <td> 
