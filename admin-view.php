@@ -278,7 +278,7 @@ $clinic = mysqli_query($con,$query);
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php while ($row = mysqli_fetch_assoc($schedule)) { ?>
+                                    <?php while ($row = mysqli_fetch_assoc($clinic)) { ?>
                                     <tr>
                                         <td><?php echo $row['clinicID']; ?></td>
                                         <td><?php echo $row['clinicName']; ?></td>
