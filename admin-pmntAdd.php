@@ -25,12 +25,12 @@ $status = "";
 $errorMessage="";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $paymentID = $_POST['firstName'];
-    $apptID = $_POST['lastName'];
-    $amount = $_POST['specialization'];
-    $paymentDate = $_POST['status'];
-    $paymentMethod = $_POST['email'];
-    $status = $_POST['clinicID'];
+    $paymentID = $_POST['paymentID'];
+    $apptID = $_POST['apptID'];
+    $amount = $_POST['amount'];
+    $paymentDate = $_POST['paymentDate'];
+    $paymentMethod = $_POST['paymentMethod'];
+    $status = $_POST['status'];
 
     if (empty($apptID) || empty($amount) || empty($paymentDate) || empty($paymentMethod) || empty($status)) {
         $errorMessage = 'All fields are required.';
