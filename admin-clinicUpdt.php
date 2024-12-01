@@ -28,7 +28,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'GET' ) {
         exit;
     }
 
-    $scheduleID = $_GET["id"];
+    $clinicID = $_GET["id"];
 
     // Read row based on id
     $sql = "SELECT * FROM Clinic WHERE clinicID=$clinicID";
