@@ -4,7 +4,7 @@ require_once("config/db.php");
 if ( isset( $_GET["id"]) ) {
     $id = (int) $_GET["id"];
 
-    $sql = "DELETE FROM Payments WHERE patientID = $id";
+    $sql = "DELETE FROM Payments WHERE paymentID = $id";
     $con->query( $sql );
 }
 
