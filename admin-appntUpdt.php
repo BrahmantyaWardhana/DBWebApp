@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         exit;
     }
 
-    $apptID = $_GET["apptID"];
+    $apptID = $_GET["id"];
 
     // Fetch appointment details based on the apptID
     $sql = "SELECT * FROM Appointment WHERE apptID = $apptID";
