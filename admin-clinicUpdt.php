@@ -84,7 +84,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'GET' ) {
             <button type="submit">Logout</button>
         </form>
         <div class="container my-5">
-            <h2 class="display-6 text-center">Add Payments Table</h2>
+            <h2 class="display-6 text-center">Add Clinics Table</h2>
 
             <!-- error message -->
             <?php if (!empty($errorMessage)): ?>
@@ -97,13 +97,13 @@ if ( $_SERVER['REQUEST_METHOD'] == 'GET' ) {
             <form method="POST">
                 <input type="hidden" name="clinicID" value="<?php echo $clinicID ?>">
                 <div class="row mb-3">
-                    <label class="col-sm-3 col-from-label">Doctor ID</label>
+                    <label class="col-sm-3 col-from-label">Clinic Name</label>
                     <div class="col-sm-6">
                         <input type="text" class="form-control" name="clinicName" value="<?php echo $clinicName ?>">
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label class="col-sm-3 col-from-label">Day of the Week</label>
+                    <label class="col-sm-3 col-from-label">Address</label>
                     <div class="col-sm-6">
                         <input type="text" class="form-control" name="address" value="<?php echo $address ?>">
                     </div>
