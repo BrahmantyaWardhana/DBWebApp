@@ -24,6 +24,7 @@ $endTime = "";
 $errorMessage="";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $scheduleID = $_POST['scheduleID'];
     $doctorID = $_POST['doctorID'];
     $dayOfWeek = $_POST['dayOfWeek'];
     $startTime = $_POST['startTime'];
@@ -34,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         // Prepare and execute the SQL query to insert data into the database
         $sql = "INSERT INTO Schedule (doctorID, dayOfWeek, startTime, endTime) " .
-                "VALUES ('$doctorID', '$dayOfWeek', '$startTime', '$endTime'";
+                "VALUES ('$doctorID', '$dayOfWeek', '$startTime', '$endTime')";
 
         $result = $con->query($sql);
 
